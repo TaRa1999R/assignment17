@@ -221,7 +221,6 @@ def equal () :
     operation = ""
     first = ""
 
-
 app = QApplication ([])
 loader = QUiLoader ()
 window = loader.load ("calculator.ui")
