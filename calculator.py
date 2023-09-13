@@ -1,4 +1,5 @@
 
+import math
 from PySide6.QtWidgets import QApplication
 from PySide6.QtUiTools import QUiLoader
 
@@ -66,6 +67,21 @@ def sum () :
     number = ""
     window.textbox.setText (number)
 
+def sub () :
+    global number
+    global operation
+    global first
+    first = int (number)
+    operation = "-"
+    number = ""
+    window.textbox.setText (number)
+
+def multi () : ...
+
+def divid () : ...
+
+def sqrt () : ...
+
 def equal () :
     global number
     global first
@@ -74,6 +90,9 @@ def equal () :
 
     if operation == "+" :
         result = first + second
+
+    elif operation == "-" :
+        result = first - second
     
     window.textbox.setText (str(result))
     number = ""
@@ -100,6 +119,10 @@ window.nine.clicked.connect (nine)
 
 window.equal.clicked.connect (equal)
 window.sum.clicked.connect (sum)
+window.sub.clicked.connect (sub)
+window.multi.clicked.connect (multi)
+window.divide.clicked.connect (divid)
+window.sqrt.clicked.connect (sqrt)
 
 window.ac.clicked.connect (ac)
 
