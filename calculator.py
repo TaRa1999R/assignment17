@@ -76,9 +76,23 @@ def sub () :
     number = ""
     window.textbox.setText (number)
 
-def multi () : ...
+def multi () :
+    global number 
+    global operation
+    global first
+    first = int (number)
+    operation = "*"
+    number = ""
+    window.textbox.setText (number)
 
-def divid () : ...
+def divid () : 
+    global number
+    global operation
+    global first
+    first = int (number)
+    operation = "/"
+    number = ""
+    window.textbox.setText (number)
 
 def sqrt () : ...
 
@@ -93,6 +107,16 @@ def equal () :
 
     elif operation == "-" :
         result = first - second
+    
+    elif operation == "*" :
+        result = first * second
+
+    elif operation == "/" :
+        if second == 0 :
+            result = " Error!! "
+
+        else :
+            result = first / second
     
     window.textbox.setText (str(result))
     number = ""
